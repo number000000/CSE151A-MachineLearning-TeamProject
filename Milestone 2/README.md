@@ -20,3 +20,10 @@
 ## Any git commits past the deadline will not be considered!
 
 ## submit your GitHub URL.
+
+## Preprocess data steps:
+1. Imputing data: We have checked that if there are null data in our dataset using 'isnull()'
+2. Normalization data: We have used min_max scaling to normalize our feature values.
+   citation: (https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html)
+3. Encoding data: We have used one-hot encoding to transform categorical data into integer classes
+   citation: (https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html)
