@@ -1,3 +1,7 @@
+<a target="_blank" href="https://colab.research.google.com/gist/chizhang9135/f08e621c3ddad2495caef1649decc68f/milestone2.ipynb">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a>
+
 # Group Project: Data Exploration & Initial Preprocessing Milestone 2
 
 ## Your submission will be a link to your GitHub Repository.
