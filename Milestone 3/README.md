@@ -14,8 +14,8 @@ We can see the training, validating, and testing metrics perform good and simila
 
 
 ## Next models to try
-1. 
-2. 
+1. SVM: SVM is a good model for classication, and we are trying to classify rice base on features, which is appropriate. 
+2. Naive Bayes: Naive Bayes is a good model for classication task, and we are trying to classify rice base on features, which is appropriate.
 
 ## Conclusion
 The model currently perform well, with above 90% accuracy on testing data. However, there still some room to improve. We can tune our hyperparameter to try to achieve better metrics.
