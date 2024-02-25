@@ -18,3 +18,4 @@ We can see the training, validating, and testing metrics perform good and simila
 2. 
 
 ## Conclusion
+The model currently perform well, with above 90% accuracy on testing data. However, there still some room to improve. We can tune our hyperparameter to try to achieve better metrics.
