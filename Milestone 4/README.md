@@ -12,6 +12,8 @@ Accuracy, Precision, Recall, and F1-score are consistently high on the test data
 
 We can see the training, and testing metrics perform good and similar to each other which show that our model is just right. No overfitting or underfitting happen.
 
+It is about the same as the first model. Since our first model is already have good performance, this model is consider good.
+
 ## Next models to try
 1. Naive Bayes: Naive Bayes is a good model for classication task, and we are trying to classify rice base on features, which is appropriate.
 
