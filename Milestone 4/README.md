@@ -14,5 +14,5 @@ We can see the training, and testing metrics perform good and similar to each ot
 1. Naive Bayes: Naive Bayes is a good model for classication task, and we are trying to classify rice base on features, which is appropriate.
 
 ## Conclusion
-The model currently perform well, with above 93% accuracy on testing data. 
+The model currently perform well, with above 93% accuracy on testing data. The model's test accuracy is a bit better than the previous one, which show that SVM can perform better in this classification task. To improve, we will try to use Naive Bayes in our final model to try to make better metrics.
 
