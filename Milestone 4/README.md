@@ -5,6 +5,8 @@
 ## Model
 The second model is SVM with linear kernal
 
+## Hyper-parameter tune: kernal type
+
 ## Fitting
 Accuracy, Precision, Recall, and F1-score are consistently high on the test dataset (around 93%), indicating that the model performs well on unseen data.
 
