@@ -6,4 +6,6 @@
 
 [Milestone 3: Data Preprocessing Milestone 3 (Done)](<Milestone 3>)
 
-[Milestone 4: Model 2 and evaluation Milestone 4](<Milestone 4>)
+[Milestone 4: Model 2 and evaluation Milestone 4 (Done)](<Milestone 4>)
+
+[Final Report](<Final>)
