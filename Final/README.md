@@ -19,6 +19,7 @@
 ## All code uploaded
 
 ## Introduction of your project. Why chosen? why is it cool? General/Broader impact of having a good predictive mode. i.e. why is this important?
+In our project, we aim to develop a predictive model for classifying rice varieties (Cammeo and Osmancik) using data extracted from rice paddy images. We chose this project because it is an interesting topic in the field of agricultural technology. Classification of rice varieties among them may be beneficial for quality control and marketing. The potential of this predictive model can improve the rice industry. It could become a useful tool for farmers as well as agricultural markets.
 
 ## Figures (of your choosing to help with the narration of your story) with legends (similar to a scientific paper) For reference you search machine learning and your model in google scholar for reference examples.
 
