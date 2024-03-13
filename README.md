@@ -1,3 +1,4 @@
+We also made a website for this project: https://ucsd-wi24-cse151a.github.io/Team-Project/
 # Milestones
 
 [Milestone 1: Abstract, Data and Group Members (Done)](<Milestone 1>)
