@@ -28,6 +28,21 @@ In our project, we aim to develop a predictive model for classifying rice variet
 
 ## Results section. This will include the results from the methods listed above (C). You will have figures here about your results as well.
     - No exploration of results is done here. This is mainly just a summary of your results. The sub-sections will be the same as the sections in your methods section.
+    Accuracy: 0.926509186351706
+Classification Report:
+               precision    recall  f1-score   support
+
+           0       0.93      0.90      0.92       337
+           1       0.92      0.95      0.94       425
+
+    accuracy                           0.93       762
+   macro avg       0.93      0.92      0.93       762
+weighted avg       0.93      0.93      0.93       762
+
+Loss:
+ 2.648877414423308
+Test Error:
+ 0.07349081364829402
 
 ## Discussion section: This is where you will discuss the why, and your interpretation and your though process from beginning to end. This will mimic the sections you have created in your methods section as well as new sections you feel you need to create. You can also discuss how believable your results are at each step. You can discuss any short comings. It's ok to criticize as this shows your intellectual merit, as to how you are thinking about things scientifically and how you are able to correctly scrutinize things and find short comings. In science we never really find the perfect solution, especially since we know something will probably come up int he future (i.e. donkeys) and mess everything up. If you do it's probably a unicorn or the data and model you chose are just perfect for each other!
 
