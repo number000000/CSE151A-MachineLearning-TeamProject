@@ -36,7 +36,7 @@
 ### Start with Name: Title: Contribution. If the person contributed nothing then just put in writing: Did not participate in the project.
 
 ### Chi Zhang (Team Lead): Organize meeting, coding, write up, and repo management, project website
-### Name (Role): Jobs
+### Chengtao Wu (Role): Preprocess the data, build the models. 
 ### Name (Role): Jobs
 ### Name (Role): Jobs
 ### Name (Role): Jobs
