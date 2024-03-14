@@ -64,7 +64,7 @@ In future work, we would like to explore these areas further and investigate the
 ### Start with Name: Title: Contribution. If the person contributed nothing then just put in writing: Did not participate in the project.
 
 ### Chi Zhang (Team Lead): Organize meetings, coding, write-up, and repo management, project website
-### Chengtao Wu (Role): Preprocess the data, build the models. 
+### Chengtao Wu (Member): Preprocess the data, build the models. 
 ### Hongyuan Jia (Member): Write the write-up, data plotting
 ### Yilin Song (Member): Helped in bug fixing, data preprocessing, and model building
 ### Name (Role): Jobs
