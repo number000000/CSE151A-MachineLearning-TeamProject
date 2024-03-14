@@ -1,13 +1,33 @@
-# Final Report (remember to upload a copy of model3)
+# Final Report
 
+## Table of Contents
+- [Final Report](#final-report)
+  - [Table of Contents](#table-of-contents)
+  - [Model 3](#model-3)
+  - [A complete submission of all prior submissions with code included](#a-complete-submission-of-all-prior-submissions-with-code-included)
+  - [Introduction](#introduction)
+  - [Figures](#figures)
+  - [Methods Section](#methods-section)
+    - [Data Exploration](#data-exploration)
+    - [Preprocessing Steps](#preprocessing-steps)
+    - [Models and Parameters](#models-and-parameters)
+      - [Model 1 (ANN/DNN)](#model-1-anndnn)
+      - [Model 2 (SVM)](#model-2-svm)
+      - [Model 3 (KNN)](#model-3-knn)
+  - [Results Section](#results-section)
+    - [Model 1](#model-1)
+    - [Model 2](#model-2)
+    - [Model 3](#model-3-1)
+  - [Discussion Section](#discussion-section)
+  - [Conclusion Section](#conclusion-section)
+  - [Collaboration Section](#collaboration-section)
+
+## Model 3
 <a target="_blank" href="https://colab.research.google.com/drive/1OD1qrBjE4OYI9Ho7hAMK1EPTR6X4C9xb#scrollTo=WPVICMsurQnU">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 
-## A complete Introduction
-
-
-## A complete submission of all prior submissions
+## A complete submission of all prior submissions with code included
 [Milestone 1: Abstract, Data and Group Members (Done)](<../Milestone 1>)
 
 [Milestone 2: Data Exploration & Initial Preprocessing (Done)](<../Milestone 2>)
@@ -16,42 +36,191 @@
 
 [Milestone 4: Model 2 and evaluation Milestone 4 (Done)](<../Milestone 4>)
 
-## All code uploaded
 
-## Introduction of your project. Why chosen? why is it cool? General/Broader impact of having a good predictive mode. i.e. why is this important?
+## Introduction
 In our project, we aim to develop a predictive model for classifying rice varieties (Cammeo and Osmancik) using data extracted from rice paddy images. We chose this project because it is an interesting topic in the field of agricultural technology. Classification of rice varieties among them may be beneficial for quality control and marketing. The potential of this predictive model can improve the rice industry. It could become a useful tool for farmers as well as agricultural markets.
 
-## Figures (of your choosing to help with the narration of your story) with legends (similar to a scientific paper) For reference you search machine learning and your model in google scholar for reference examples.
+## Figures
+<img src="../img/table1.png" width="100%" height="100%"> \
+<img src="../img/table2.png" width="25%" height="100%"> \
+**Working Flow**
+<img src="../img/flowchart.png" width="25%" height="25%">
 
-## Methods section (this section will include the exploration results, preprocessing steps, models chosen in the order they were executed. Parameters chosen. Please make sub-sections for every step. i.e Data Exploration, Preprocessing, Model 1, Model 2, Model 3, (note models can be the same i.e. CNN but different versions of it if they are distinct enough). You can put links here to notebooks and/or code blocks using three ` in markup for displaying code. so it would look like this: ``` MY CODE BLOCK ```
-    - Note: A methods section does not include any why. the reason why will be in the discussion section. This is just a summary of your methods
+## Methods Section
+### Data Exploration
+**Print feature info**
+```python
+X.info()
+```
+><class 'pandas.core.frame.DataFrame'>
+>RangeIndex: 3810 entries, 0 to 3809
+>Data columns (total 7 columns):
+> |    |Column             |Non-Null Count | Dtype |
+> |--- | ------|             -------------- | ----- | 
+> |0|   Area               |3810 non-null   |int64  |
+> |1|   Perimeter          |3810 non-null   |float64|
+> |2|   Major_Axis_Length  |3810 non-null   |float64|
+> |3|   Minor_Axis_Length  |3810 non-null   |float64|
+> |4|   Eccentricity       |3810 non-null   |float64|
+> |5|   Convex_Area        |3810 non-null   |int64  |
+> |6|   Extent             |3810 non-null   |float64|
+> 
+>dtypes: float64(5), int64(2)
+>memory usage: 208.5 KB
 
-## Results section. This will include the results from the methods listed above (C). You will have figures here about your results as well.
-    - No exploration of results is done here. This is mainly just a summary of your results. The sub-sections will be the same as the sections in your methods section.
-    - Accuracy: 0.926509186351706
-      Classification Report:
-                     precision    recall  f1-score   support
-      
-                 0       0.93      0.90      0.92       337
-                 1       0.92      0.95      0.94       425
-      
-          accuracy                           0.93       762
-         macro avg       0.93      0.92      0.93       762
-      weighted avg       0.93      0.93      0.93       762
-      
-      Loss:
-       2.648877414423308
-      Test Error:
-       0.07349081364829402
+**Print class info**
+```python
+y.info()
+```
+><class 'pandas.core.frame.DataFrame'>
+>RangeIndex: 3810 entries, 0 to 3809
+>Data columns (total 1 columns):
+> |    |Column  |Non-Null Count  |Dtype| 
+> |--- | ------ | --------------  |----- |
+> |0 |  Class   |3810 non-null   |object|
+>
+>dtypes: object(1)
+>memory usage: 29.9+ KB
 
-## Discussion section: This is where you will discuss the why, and your interpretation and your though process from beginning to end. This will mimic the sections you have created in your methods section as well as new sections you feel you need to create. You can also discuss how believable your results are at each step. You can discuss any short comings. It's ok to criticize as this shows your intellectual merit, as to how you are thinking about things scientifically and how you are able to correctly scrutinize things and find short comings. In science we never really find the perfect solution, especially since we know something will probably come up int he future (i.e. donkeys) and mess everything up. If you do it's probably a unicorn or the data and model you chose are just perfect for each other!
+There are no null values for all feature data. \
+A detailed analysis of the values is shown in table 1 and table 2.
+
+**Pairplot**
+<img src="../img/pairplot.png" width="100%" height="100%">
+**Heatmap**
+<img src="../img/heatmap.png" width="50%" height="50%">
+
+### Preprocessing Steps
+We used MinMax Normalization to normalize our data. We also used One-Hot Encoding to encode our target classes to numerical values.
+```python
+scaler = MinMaxScaler()
+X_normalized = scaler.fit_transform(X)
+
+one_hot = OneHotEncoder()
+y_one_hot = one_hot.fit_transform(y.values.reshape(-1,1)).toarray()
+```
+
+### Models and Parameters
+#### Model 1 (ANN/DNN)
+```python
+model = Sequential()
+model.add(Dense(units = 64, activation = 'relu', input_shape=(X_train.shape[1],)))
+model.add(Dense(units = 16, activation = 'relu'))
+model.add(Dense(units = 1, activation = 'sigmoid'))
+model.compile(optimizer = 'rmsprop', loss = 'binary_crossentropy',
+              metrics=[
+                  tf.keras.metrics.Precision(name='precision'),
+                  tf.keras.metrics.Recall(name='recall'),
+                  'accuracy'
+                  ])
+history = model.fit(X_train.astype('float'), y_train, batch_size = 1, epochs = 10, validation_split=0.2, verbose = 0)
+```
+<a target="_blank" href="https://colab.research.google.com/drive/1kSHfct3UeFsFB2DUTZJE6G6X70RQnjvS">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a>
+
+#### Model 2 (SVM)
+Version 1:
+```python
+svm_model = SVC(kernel='rbf')
+svm_model.fit(X_train, y_train)
+```
+Version 2:
+```python
+svm_model = SVC(kernel='linear')
+svm_model.fit(X_train, y_train)
+```
+<a target="_blank" href="https://colab.research.google.com/drive/1opJFstOA3cIdmKUkVC-ap4urjRuDM9NS?usp=sharing">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a>
+
+#### Model 3 (KNN)
+```python
+knn = KNeighborsClassifier()
+knn.fit(X_train, y_train)
+```
+<a target="_blank" href="https://colab.research.google.com/drive/1OD1qrBjE4OYI9Ho7hAMK1EPTR6X4C9xb#scrollTo=WPVICMsurQnU">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a>
+
+## Results Section
+### Model 1
+```
+              precision    recall  f1-score   support
+
+           0       0.89      0.95      0.92       350
+           1       0.95      0.90      0.93       412
+
+    accuracy                           0.92       762
+   macro avg       0.92      0.93      0.92       762
+weighted avg       0.93      0.92      0.92       762
+```
+### Model 2
+Version 1:
+```
+Accuracy: 0.9291338582677166
+Classification Report:
+              precision    recall  f1-score   support
+
+          0       0.93      0.92      0.92       350
+          1       0.93      0.94      0.93       412
+
+    accuracy                           0.93       762
+  macro avg       0.93      0.93      0.93       762
+weighted avg       0.93      0.93      0.93       762
+
+Loss:
+2.5542746496224753
+Test Error:
+0.07086614173228345
+```
+
+Version 2:
+```
+Accuracy: 0.9304461942257218
+Classification Report:
+              precision    recall  f1-score   support
+
+          0       0.92      0.93      0.92       350
+          1       0.94      0.93      0.94       412
+
+    accuracy                           0.93       762
+  macro avg       0.93      0.93      0.93       762
+weighted avg       0.93      0.93      0.93       762
+
+Loss:
+2.5069732672220595
+Test Error:
+0.06955380577427817
+```
+
+### Model 3
+```
+Accuracy: 0.926509186351706
+Classification Report:
+                precision    recall  f1-score   support
+
+            0       0.93      0.90      0.92       337
+            1       0.92      0.95      0.94       425
+
+    accuracy                           0.93       762
+    macro avg       0.93      0.92      0.93       762
+weighted avg       0.93      0.93      0.93       762
+
+Loss:
+  2.648877414423308
+Test Error:
+  0.07349081364829402
+```
+
+## Discussion Section
 Initially, we intended to use Naive Bayes. However, upon evaluation, we found that the metrics for this model were unsatisfactory. This led us to reconsider our choice and ultimately switch to the K-Nearest Neighbors (KNN) algorithm, which showed significantly better performance. 
 
 Our data and labels remained consistent with those used in Milestone 4. Given that the results in Milestone 4 were satisfactory, we saw no need for modifications in this aspect.
 
 While our models showed promising results, there are several shortcomings to acknowledge. Firstly, the simplicity of Naive Bayes may have contributed to its initial poor performance, indicating a need for more complex models in this context. Additionally, the reliance on log loss as our sole evaluation metric may not capture all aspects of model performance, suggesting the potential benefit of incorporating additional metrics in future analyses. The data set is not very large, although it makes it convenient for us to do preliminary research. But if we want to do further analysis, we may need more data.
 
-## Conclusion section: This is where you do a mind dump on your opinions and possible future directions. Basically what you wish you could have done differently. Here you close with final thoughts
+## Conclusion Section
 The model currently perform well, with above 93% accuracy on testing data. The model's test accuracy is a bit better than the previous one, which show that KNN can perform better in this classification task.
 
 Throughout the project, we encountered several challenges, such as selecting appropriate features, dealing with imbalanced data, and choosing the right evaluation metrics. We addressed these challenges through feature engineering, data preprocessing techniques, and experimenting with different models.
@@ -60,19 +229,13 @@ Additional feature engineering techniques, such as creating interaction terms or
 
 In future work, we would like to explore these areas further and investigate the potential of advanced techniques like deep learning or unsupervised learning methods to improve our predictions.
 
-## Collaboration section: This is a statement of contribution by each member. This will be taken into consideration when making the final grade for each member in the group. Did you work as a team? was there a team leader? project manager? coding? writer? etc. Please be truthful about this as this will determine individual grades in participation. There is no job that is better than the other. If you did no code but did the entire write up and gave feedback during the steps and collaborated then you would still get full credit. If you only coded but gave feedback on the write up and other things, then you still get full credit. If you managed everyone and the deadlines and setup meetings and communicated with teaching staff only then you get full credit. Every role is important as long as you collaborated and were integral to the completion of the project. If the person did nothing. they risk getting a big fat 0. Just like in any job, if you did nothing, you have the risk of getting fired. Teamwork is one of the most important qualities in industry and academia!!!
-### Start with Name: Title: Contribution. If the person contributed nothing then just put in writing: Did not participate in the project.
-
-### Chi Zhang (Team Lead): Organize meetings, coding, write-up, and repo management, project website
-### Chengtao Wu (Member): Preprocess the data, build the models. 
-### Hongyuan Jia (Member): Write the write-up, data plotting
-### Yilin Song (Member): Helped in bug fixing, data preprocessing, and model building
-### Name (Role): Jobs
-### Name (Role): Jobs
-### Name (Role): Jobs
-
-
-
-## Your final model (model 3) and final results summary (this should be the last paragraph in D)
+## Collaboration Section
+- Chi Zhang (Team Lead): Organize meetings, coding, write-up, and repo management, project website
+- Chengtao Wu (Member): Preprocess the data, build the models. 
+- Hongyuan Jia (Member): Write the write-up, data plotting
+- Yilin Song (Member): Helped in bug fixing, data preprocessing, and model building
+- Meihui Liu (Member): Data exploring and plotting, Final report writing and organization
+- Name (Role): Jobs
+- Name (Role): Jobs
 
 
