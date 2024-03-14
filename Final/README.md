@@ -66,7 +66,7 @@ In future work, we would like to explore these areas further and investigate the
 ### Chi Zhang (Team Lead): Organize meetings, coding, write-up, and repo management, project website
 ### Chengtao Wu (Role): Preprocess the data, build the models. 
 ### Hongyuan Jia (Member): Write the write-up, data plotting
-### Name (Role): Jobs
+### Yilin Song (Member): Helped in bug fixing, data preprocessing, and model building
 ### Name (Role): Jobs
 ### Name (Role): Jobs
 ### Name (Role): Jobs
