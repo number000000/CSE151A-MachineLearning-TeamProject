@@ -43,8 +43,9 @@ In our project, we aim to develop a predictive model for classifying rice variet
 ## Figures
 <img src="../img/table1.png" width="100%" height="100%"> \
 <img src="../img/table2.png" width="25%" height="100%"> \
-**Working Flow**
-<img src="../img/flowchart.png" width="25%" height="25%">
+\
+**Working Flow** \
+<img src="../img/flowchart.png" width="50%" height="50%">
 
 ## Methods Section
 ### Data Exploration
@@ -83,11 +84,11 @@ y.info()
 >memory usage: 29.9+ KB
 
 There are no null values for all feature data. \
-A detailed analysis of the values is shown in table 1 and table 2.
+A detailed analysis of the values is shown in table 1 and table 2. 
 
-**Pairplot**
-<img src="../img/pairplot.png" width="100%" height="100%">
-**Heatmap**
+**Pairplot** \
+<img src="../img/pairplot.png" width="100%" height="100%"> \
+**Heatmap** \
 <img src="../img/heatmap.png" width="50%" height="50%">
 
 ### Preprocessing Steps
