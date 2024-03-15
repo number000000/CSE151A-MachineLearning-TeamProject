@@ -236,7 +236,7 @@ In future work, we would like to explore these areas further and investigate the
 - Hongyuan Jia (Member): Write the write-up, data plotting
 - Yilin Song (Member): Helped in bug fixing, data preprocessing, and model building
 - Meihui Liu (Member): Data exploring and plotting, Final report writing and organization
-- Name (Role): Jobs
+- Aaron Li (Member): Helped writting the write-up and plotting data
 - Name (Role): Jobs
 
 
