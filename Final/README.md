@@ -237,6 +237,6 @@ In future work, we would like to explore these areas further and investigate the
 - Yilin Song (Member): Helped in bug fixing, data preprocessing, and model building
 - Meihui Liu (Member): Data exploring and plotting, Final report writing and organization
 - Aaron Li (Member): Helped writting the write-up and plotting data
-- Name (Role): Jobs
+- Cindy Chen (Member): Building models, plotting graphs, write-up
 
 
